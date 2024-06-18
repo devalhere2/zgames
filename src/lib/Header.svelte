@@ -1,23 +1,23 @@
 <script>
-    import { createEventDispatcher } from "svelte";
-    const dispatch = createEventDispatcher();
-    let toggle = false;
-    function login() {
-        toggle = !toggle;
-        dispatch("loginToggle", toggle);
-    }
+    
 </script>
-
 
 <div id="header">
     <header>
-        <div id="title">zGames</div>
-        <button id="login" on:click={login}>Login</button>
-    </header>    
+        <a data-sveltekit-prefetch href="/" >
+            <div id="title">zGames</div>        
+        </a>
+        <a data-sveltekit-prefetch href="/login" >
+            <button id="login">Login</button>
+        </a>
+    </header>
 </div>
 
-
 <style>
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
     #header {
         width: 100vw;
         height: 80px;
@@ -52,6 +52,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 10px;
+
         background: linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.1),
